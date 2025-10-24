@@ -1,0 +1,139 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #e0f7fa;
+    color: #333;
+    transition: background-color 0.3s, color 0.3s;
+}
+.container {
+    margin: 50px auto;
+    padding: 0 20px;
+    max-width: 900px;
+    box-sizing: border-box;
+}
+.button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+button {
+    display: block;
+    width: 100%;
+    max-width: 350px; /* Butonların çok genişlemesini engeller */
+    margin: 10px auto;
+    padding: 15px 25px;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    background-color: #007bb5;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+button:hover {
+    background-color: #005f87;
+    transform: scale(1.05);
+}
+button:disabled {
+    background-color: #adb5bd;
+    color: #6c757d;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+    opacity: 0.7;
+}
+
+/* Sayfa Geri Butonları */
+.page-footer {
+    margin-top: 30px;
+    border-top: 1px solid #ccecf2;
+    padding-top: 20px;
+}
+.back-button {
+    background-color: #6c757d;
+}
+.back-button:hover {
+    background-color: #5a6268;
+}
+
+/* Ders Butonları Izgarası */
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+.course-grid button {
+    width: 100%; /* Izgara içindeki genişliği ayarlar */
+    max-width: none; /* Üstteki max-width'i ezer */
+    margin: 0; /* Izgara gap'i margin'i yönetir */
+}
+
+.hidden {
+    display: none;
+}
+
+/* Dark Mode Toggle */
+#darkModeToggle {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 10px 15px;
+    border-radius: 50%;
+    background-color: #007bb5;
+    color: white;
+    cursor: pointer;
+    width: auto;
+    max-width: none;
+    margin: 0;
+}
+
+/* Dark Mode Stilleri */
+.dark-mode {
+    background-color: #263238;
+    color: #f5f5f5;
+}
+.dark-mode button {
+    background-color: #0097a7;
+    color: white;
+}
+.dark-mode button:hover {
+    background-color: #006064;
+}
+.dark-mode .back-button {
+    background-color: #455a64;
+}
+.dark-mode .back-button:hover {
+    background-color: #37474f;
+}
+.dark-mode #darkModeToggle {
+    background-color: #455a64;
+    color: #f5f5f5;
+}
+.dark-mode .page-footer {
+    border-top-color: #455a64;
+}
+.dark-mode button:disabled {
+    background-color: #37474f;
+    color: #78909c;
+    opacity: 0.6;
+}
+
+/* Mobil Uyumluluk */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+    button {
+        padding: 12px 20px;
+        font-size: 16px;
+    }
+    .course-grid {
+        grid-template-columns: 1fr; /* Mobilde tek sütun */
+    }
+    #darkModeToggle {
+        padding: 8px 12px;
+    }
+}
