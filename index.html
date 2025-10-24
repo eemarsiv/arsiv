@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Elektrik-Elektronik Mühendisliği (EEM) ders notları ve kaynak arşivi. Sınıflara ve dönemlere göre ders notlarına ulaşın.">
+    <title>EEM Arşiv</title>
+    <link rel="stylesheet" href="style.css">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7KJ5LNBGV7"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-7KJ5LNBGV7');
+    </script>
+</head>
+<body>
+    <button id="darkModeToggle" aria-label="Karanlık modu aç/kapat">🌙</button>
+    
+    <div class="container" id="mainPage">
+        <h1>EEM Arşiv</h1>
+        <div class="button-group">
+            <button onclick="showClasses(1)">1. Sınıf</button>
+            <button onclick="showClasses(2)">2. Sınıf</button>
+            <button onclick="showClasses(3)">3. Sınıf</button>
+            <button onclick="showClasses(4)">4. Sınıf</button>
+            <button onclick="window.open('https://t.me/Alchnes', '_blank')">İletişim</button>
+        </div>
+    </div>
+    
+    <div class="container hidden" id="classPage" role="region" aria-labelledby="classTitle">
+        <h1 id="classTitle"></h1>
+        <div class="button-group">
+            <button onclick="showTerms(1)">1. Dönem</button>
+            <button onclick="showTerms(2)">2. Dönem</button>
+        </div>
+        <div class="page-footer">
+            <button class="back-button" onclick="goBack('mainPage')">Ana Sayfaya Geri</button>
+        </div>
+    </div>
+    
+    <div class="container hidden" id="termPage" role="region" aria-labelledby="termTitle">
+        <h1 id="termTitle"></h1>
+        <div id="courseButtons" class="course-grid"></div>
+        <div class="page-footer">
+            <button class="back-button" onclick="goBack('classPage')">Sınıf Seçimine Geri</button>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
